@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using practica31025.Model;
 using practica31025.Services;
 
@@ -7,11 +8,16 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-builder.Services.AddSingleton(new List<Food>
+//builder.Services.AddSingleton(new List<Food>
+//{
+//    new Food { Id = 1, Name = "guineo", Description = TypeFood.Fruits },
+//    new Food { Id = 2, Name = "pitahaya", Description = TypeFood.Fruits },
+//    new Food { Id = 3, Name = "lechuga", Description = TypeFood.Vegetables }
+//});
+
+builder.Services.AddDbContext<FoodContext>(options =>
 {
-    new Food { Id = 1, Name = "guineo", Description = TypeFood.Fruits },
-    new Food { Id = 2, Name = "pitahaya", Description = TypeFood.Fruits },
-    new Food { Id = 3, Name = "lechuga", Description = TypeFood.Vegetables }
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
 builder.Services.AddScoped<FoodServices>();

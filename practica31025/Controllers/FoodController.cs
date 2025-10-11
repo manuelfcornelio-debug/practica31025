@@ -9,27 +9,30 @@ namespace practica31025.Controllers
     [ApiController]
     public class FoodController : ControllerBase
     {
-    private readonly FoodServices _foodServices;
+        private readonly FoodServices _foodServices;
         public FoodController(FoodServices foodServices)
         {
             _foodServices = foodServices;
-            
         }
 
-        [HttpGet]
-        public IActionResult All()
-        {
-            
+        //[HttpGet("All")]
+        //public IActionResult All()
+        //{
+        //    return Ok(_foodServices.All());
+        //}
 
-            return Ok(_foodServices.All());
+        //[HttpPost ("Add")]
+        //public IActionResult Create([FromBody] Food food)
+        //{
+        //    return Created("api/Food/add", _foodServices.Add(food));
+        //}
 
-        }
-        [HttpGet("Saludo")]
-        public IActionResult Details() 
-        { 
-         return Ok(_foodServices.saludo());
+        //[HttpDelete ("Delete")]
+        //public IActionResult Delete([FromBody] Food food)
+        //{
+        //     return Ok(_foodServices.Delete(food));
+        //}
         
-        }
-        
+
     }
 }

@@ -4,24 +4,36 @@ namespace practica31025.Services
 {
     public class FoodServices
     {
-        private readonly List<Food> _foodList;
-        public FoodServices(List<Food> foodList )
+        private readonly FoodContext _foodContext;
+
+        public FoodServices(FoodContext foodContext)
         {
-           _foodList = foodList; 
+            _foodContext = foodContext;
         }
-        public List<Food> All() 
-        {
-            
 
 
-            return _foodList;
+        //public List<Food> All() 
+        //{
+        //    return _foodList;
+        //}
 
+        //public Food Add(Food food)
+        //{
+        //    _foodList.Add(food);
+        //    return food;
+        //}
 
-        }
-        public string saludo()
-        {
-            return "soy el servicio";
-        }
+        //public Food? Delete(Food food)
+        //{
+        //    var foodToDelete = _foodList.FirstOrDefault(f => f.Id == food.Id);
+        //    if (foodToDelete != null)
+        //    {
+        //        _foodList.Remove(foodToDelete);
+        //        return foodToDelete;
+        //    }
+
+        //    return null;
+        //}
     }
 
 
