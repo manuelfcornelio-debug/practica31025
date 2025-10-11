@@ -15,24 +15,24 @@ namespace practica31025.Controllers
             _foodServices = foodServices;
         }
 
-        //[HttpGet("All")]
-        //public IActionResult All()
-        //{
-        //    return Ok(_foodServices.All());
-        //}
+        [HttpGet("All")]
+        public IActionResult All()
+        {
+            return Ok(_foodServices.All());
+        }
 
-        //[HttpPost ("Add")]
-        //public IActionResult Create([FromBody] Food food)
-        //{
-        //    return Created("api/Food/add", _foodServices.Add(food));
-        //}
+        [HttpPost("Add")]
+        public IActionResult Create([FromBody] Food food)
+        {
+            return Created("api/Food/add", _foodServices.Add(food));
+        }
 
-        //[HttpDelete ("Delete")]
-        //public IActionResult Delete([FromBody] Food food)
-        //{
-        //     return Ok(_foodServices.Delete(food));
-        //}
-        
+        [HttpDelete("DeleteByName")]
+        public IActionResult Delete([FromBody] Food food)
+        {
+            return Ok(_foodServices.Delete(food));
+        }
+
 
     }
 }

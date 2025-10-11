@@ -8,13 +8,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-//builder.Services.AddSingleton(new List<Food>
-//{
-//    new Food { Id = 1, Name = "guineo", Description = TypeFood.Fruits },
-//    new Food { Id = 2, Name = "pitahaya", Description = TypeFood.Fruits },
-//    new Food { Id = 3, Name = "lechuga", Description = TypeFood.Vegetables }
-//});
-
 builder.Services.AddDbContext<FoodContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
